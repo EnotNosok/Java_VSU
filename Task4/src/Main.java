@@ -5,8 +5,13 @@ public class Main {
         System.out.println("Введите целое положительное число");
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        if (n==0 || n<0){
-            System.out.println("Вы ввели неправильное число");
+        if (Check(n)){
+            System.out.printf("OK");
+        }
+        else{
+            System.out.printf("Not ok");
+            return;
+
         }
         double result = 0;
         for (int i=0; i<n+1; i++){
@@ -14,5 +19,13 @@ public class Main {
         }
         System.out.println("Результат суммы " + result);
 
+    }
+    public static boolean Check(int n){
+        if (n==0 || n<0) {
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 }
